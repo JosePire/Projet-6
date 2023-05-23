@@ -23,7 +23,7 @@ const init = async () => {
     const figCaption = document.createElement('figCaption')
     figCaption.innerHTML = item.title
     figure.appendChild(figCaption)
-  });
+  })
 }
 
 init()
