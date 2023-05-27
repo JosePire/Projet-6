@@ -238,9 +238,20 @@ li:hover {
 
 #filtres button {
 	border-radius: 20px;
-	background-color: white;
+	padding: 8px 12px;
+	margin-right: 10px;
+	border: none;
+	cursor: pointer;
+}
 
+.active {
+	font-weight: bold;
+	background-color: #807a7a;
+}
 
+#filtres {
+	display: flex;
+	justify-content: center;
 }
 
 #contact {
