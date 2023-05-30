@@ -77,5 +77,21 @@ const init = async () => {
 
 
 }
+function login() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var message = document.getElementById("message");
 
+  // Vérification des identifiants
+  if (username === "utilisateur" && password === "motdepasse") {
+    message.textContent = "Connexion réussie !";
+    message.classList.remove("error");
+  } else {
+    message.textContent = "Nom d'utilisateur ou mot de passe incorrect.";
+    message.classList.add("error");
+  }
+}
+$(document).ready(function () {
+  $('nav a').css('text-decoration', 'none');
+});
 init()

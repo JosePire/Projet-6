@@ -185,10 +185,74 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+
 }
 
 li:hover {
 	color: #B1663C;
+}
+
+.container {
+	max-width: 400px;
+	margin: 100px auto;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+	text-align: center;
+}
+
+.container label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 8px;
+}
+
+.container input[type="submit"] {
+	width: 50%;
+	padding: 10px;
+	background-color: black;
+	color: #fff;
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	font-size: 18px;
+}
+
+.container p {
+	text-align: center;
+	margin-top: 10px;
+	color: black;
+}
+
+
+
+.error {
+	color: red;
+}
+
+nav ul li a {
+	text-decoration: none !important;
+}
+
+
+.nav a {
+	color: #fff;
+	text-decoration: none !important;
+	margin-right: 10px;
 }
 
 #introduction {
@@ -253,6 +317,7 @@ li:hover {
 	display: flex;
 	justify-content: center;
 }
+
 
 #contact {
 	width: 50%;
