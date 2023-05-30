@@ -91,7 +91,5 @@ function login() {
     message.classList.add("error");
   }
 }
-$(document).ready(function () {
-  $('nav a').css('text-decoration', 'none');
-});
+
 init()
