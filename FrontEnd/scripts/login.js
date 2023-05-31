@@ -1,33 +1,30 @@
-function login(e) {
-    e.preventDefault()
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const message = document.getElementById("message");
+const loginForm = document.getElementById('login-form')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+const error = document.getElementById('error')
 
-    // // Vérification des identifiants
-    // if (username === "utilisateur" && password === "motdepasse") {
-    //     message.textContent = "Connexion réussie !";
-    //     message.classList.remove("error");
-    // } else {
-    //     message.textContent = "Nom d'utilisateur ou mot de passe incorrect.";
-    //     message.classList.add("error");
-    // }
+loginForm.addEventListener('submit', event => {
+  event.preventDefault()
 
-    fetch('http://localhost:5678/api/users/login', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 'email': username.value, 'password': password.value })
+  console.log(email.value, password.value)
+
+  fetch('http://localhost:5678/api/users/login', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email.value, password: password.value })
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+
+      if (data.token) {
+        // save token localstorage see: https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage
+        localStorage.token = data.token
+
+        // Redirect to home page
+        window.location.href = `${window.location.origin}/index.html`
+      } else {
+        error.textContent = 'Erreur dans l’identifiant ou le mot de passe'
+      }
     })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-        })
-
-}
-
-console.log('test')
-
-
-const formLogin = document.getElementById('form-login')
-
-formLogin.addEventListener('submit', e => login(e))
+})
