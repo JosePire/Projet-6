@@ -1,10 +1,19 @@
 const divGallery = document.getElementById('gallery')
+const aLogin = document.getElementById('login')
 
 const API_URL = 'http://localhost:5678/api'
 
 const getWorks = async () => fetch(`${API_URL}/works`, { method: 'get' }).then(res => res.json())
 
+aLogin.addEventListener('click', () => {
+  localStorage.removeItem("token");
+})
+
 const init = async () => {
+
+  if (localStorage.token) {
+    aLogin.innerHTML = 'logout'
+  }
 
   const projects = await getWorks()
   console.log(projects)
