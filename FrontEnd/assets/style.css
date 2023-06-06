@@ -175,11 +175,24 @@ h2 {
 	color: #1D6154
 }
 
+/* NAV */
+
 nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
 
+}
+
+nav ul li a {
+	text-decoration: none !important;
+}
+
+
+.nav a {
+	color: #fff;
+
+	margin-right: 10px;
 }
 
 nav li {
@@ -191,6 +204,8 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
+/* CONTAINER */
 
 .container {
 	max-width: 400px;
@@ -244,16 +259,7 @@ li:hover {
 	color: red;
 }
 
-nav ul li a {
-	text-decoration: none !important;
-}
 
-
-.nav a {
-	color: #fff;
-
-	margin-right: 10px;
-}
 
 #introduction {
 	display: flex;
@@ -291,6 +297,8 @@ nav ul li a {
 	margin-top: 139px;
 }
 
+/* ICONS */
+
 .icons-vector {
 	position: absolute;
 }
@@ -303,11 +311,6 @@ nav ul li a {
 	margin-left: 3px;
 }
 
-button {
-	border: none;
-	background-color: transparent;
-	cursor: pointer;
-}
 
 .gallery {
 	width: 100%;
@@ -323,12 +326,38 @@ button {
 
 }
 
+/* FILTRES */
+
+button {
+	background-color: transparent;
+
+	color: #1D6154;
+}
+
+.filtre {
+	width: 100px;
+}
+
+.filtre-objets {
+	width: 100px;
+}
+
+.filtre-appartements {
+	width: 157px;
+}
+
+.filtre-restaurants {
+	width: 198px;
+}
+
 #filtres button {
-	border-radius: 20px;
+	border-radius: 60px;
 	padding: 8px 12px;
 	margin-right: 10px;
-	border: none;
+	border: 1px solid #1D6154;
 	cursor: pointer;
+	box-sizing: border-box;
+
 }
 
 .active {
@@ -342,6 +371,12 @@ button {
 	justify-content: center;
 }
 
+.text {
+	font-size: 16px;
+
+}
+
+/* CONTACT */
 
 #contact {
 	width: 50%;
