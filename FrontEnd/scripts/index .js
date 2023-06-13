@@ -3,6 +3,9 @@ const aLogin = document.getElementById('login')
 const divPublish = document.getElementById('publish')
 const header = document.getElementById('header')
 const divFiltres = document.getElementById('filtres')
+const mesProjets = document.getElementById('mes-projets')
+const modal = document.getElementById('modal')
+const modalBtnClose = document.getElementById('modal-btn-close')
 
 const API_URL = 'http://localhost:5678/api'
 
@@ -10,6 +13,14 @@ const getWorks = async () => fetch(`${API_URL}/works`, { method: 'get' }).then(r
 
 aLogin.addEventListener('click', () => {
   localStorage.removeItem("token");
+})
+
+mesProjets.addEventListener('click', () => {
+  modal.style.display = 'block'
+})
+
+modalBtnClose.addEventListener('click', () => {
+  modal.style.display = 'none'
 })
 
 const init = async () => {
@@ -92,6 +103,5 @@ const init = async () => {
 
 
 }
-
 
 init()
