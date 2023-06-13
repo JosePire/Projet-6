@@ -15,8 +15,14 @@
 </head>
 
 <body>
-	<header>
-		<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<div id="publish">
+		<i class="fa-solid fa-pen-to-square icon"></i>
+		<button class="buttonEdition">Mode édition</button>
+		<button class="publish-change">publier les changements</button>
+	</div>
+	<header id="header">
+		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+
 		<nav>
 			<ul>
 				<li>projets</li>
@@ -30,8 +36,16 @@
 		<section id="introduction">
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
+				<div class="icon-button">
+
+					<i class="fa-solid fa-pen-to-square  icon-2"></i>
+					<button class="button modifier">modifier</button>
+				</div>
 			</figure>
+
 			<article>
+				<i class="fa-solid fa-pen-to-square  icon-2"></i>
+				<button class="button">modifier</button>
 				<h2>Designer d'espace</h2>
 				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
 					finale du chantier.</p>
@@ -42,14 +56,16 @@
 					décorateur(trice)</p>
 			</article>
 		</section>
-		<div>
-			<img src="assets/icons/Vector.jpg" class="icons-vector icons-1" alt="icons">
-			<img src="assets/icons/Vector.png" class="icons-vector icons-2" alt="icons-2">
-		</div>
+
 
 		<section id="portfolio">
+			<div class="modal-container">
+				<h2>Mes Projets</h2>
+				<a href="#modal" class="button modifier-modal"><i class="fa-solid fa-pen-to-square"></i>
+					modifier</a>
 
-			<h2>Mes Projets</h2>
+			</div>
+
 			<div id="filtres">
 				<button class="filtre active text" data-category="tous">Tous</button>
 				<button class="filtre-objets text" data-category="Objets">Objets</button>
@@ -86,6 +102,7 @@
 		</nav>
 	</footer>
 	<script src="./scripts/index.js"></script>
+	<script src="./scripts/modale.js"></script>
 </body>
 
 </html>

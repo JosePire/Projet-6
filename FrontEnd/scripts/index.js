@@ -1,5 +1,8 @@
 const divGallery = document.getElementById('gallery')
 const aLogin = document.getElementById('login')
+const divPublish = document.getElementById('publish')
+const header = document.getElementById('header')
+const divFiltres = document.getElementById('filtres')
 
 const API_URL = 'http://localhost:5678/api'
 
@@ -13,6 +16,9 @@ const init = async () => {
 
   if (localStorage.token) {
     aLogin.innerHTML = 'logout'
+    divPublish.style.display = "block"
+    header.style.marginTop = '109px'
+    divFiltres.style.display = 'none'
   }
 
   const projects = await getWorks()
@@ -86,5 +92,6 @@ const init = async () => {
 
 
 }
+
 
 init()
