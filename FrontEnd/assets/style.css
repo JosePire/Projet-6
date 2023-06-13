@@ -111,14 +111,6 @@ body {
 	line-height: 1;
 }
 
-#body-login {
-	background-color: #FFFEF8;
-}
-
-a {
-	color: black;
-}
-
 ol,
 ul {
 	list-style: none;
@@ -153,11 +145,60 @@ body {
 #publish {
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 0px;
 	background-color: #000000;
 	height: 59px;
 	width: 100%;
 	display: none;
+	text-align: center;
+}
+
+.publish-change {
+	border-radius: 60px;
+	Width: 216px;
+	Height: 38px;
+	font-family: 'Work Sans';
+	margin-top: 10px;
+}
+
+.buttonEdition {
+	font-family: Work Sans;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 19px;
+	font-style: normal;
+	margin-right: 21px;
+	background-color: #000000;
+	color: white;
+	border: none;
+}
+
+.modifier {
+	margin-top: 15px;
+}
+
+.button {
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	background: transparent;
+	cursor: pointer;
+	margin-bottom: 15px;
+}
+
+
+.icon-button {
+	margin-left: 50px;
+}
+
+.icon {
+	color: white;
 }
 
 header {
@@ -193,6 +234,19 @@ h2 {
 	color: #1D6154
 }
 
+/* NAV */
+
+nav ul li a {
+	text-decoration: none !important;
+}
+
+
+.nav a {
+	color: #fff;
+
+	margin-right: 10px;
+}
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -206,18 +260,18 @@ nav li {
 
 }
 
-li:hover,
-li a:hover {
+li:hover {
 	color: #B1663C;
 }
 
+/* CONTAINER */
 .container {
 	max-width: 400px;
 	margin: 100px auto;
 	background-color: #fff;
 	padding: 20px;
 	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .container h2 {
@@ -263,17 +317,8 @@ li a:hover {
 	color: red;
 }
 
-nav ul li a {
-	text-decoration: none !important;
-}
 
-
-.nav a {
-	color: #fff;
-
-	margin-right: 10px;
-}
-
+/* INTRODUCTION */
 #introduction {
 	display: flex;
 	align-items: center;
@@ -306,6 +351,27 @@ nav ul li a {
 	margin-bottom: 1em;
 }
 
+a {
+	padding-left: 31px;
+	margin-bottom: 10px;
+	text-decoration: none;
+	color: black;
+}
+
+/* MODAL */
+.modifier-modal {
+	margin-bottom: 25px;
+}
+
+
+.modal-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* GALLERY*/
 .gallery {
 	width: 100%;
 	display: grid;
@@ -319,6 +385,7 @@ nav ul li a {
 
 }
 
+/* FILTRES */
 #filtres button {
 	border-radius: 20px;
 	padding: 8px 12px;
@@ -336,6 +403,8 @@ nav ul li a {
 #filtres {
 	display: flex;
 	justify-content: center;
+	margin-bottom: 35px;
+
 }
 
 
@@ -391,69 +460,4 @@ footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
-}
-
-.modal {
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	overflow: auto;
-	z-index: 1;
-	background-color: rgba(0, 0, 0, 0.3);
-	display: none;
-}
-
-.modal-main {
-	border-radius: 5px;
-	width: 630px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	padding-bottom: 35px;
-	margin-top: 100px;
-	margin-bottom: 100px;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	background-color: white;
-}
-
-#modal-btn-close {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	cursor: pointer;
-	height: 40px;
-	width: 40px;
-	background-color: transparent;
-	color: black;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-weight: 600;
-	font-size: large;
-}
-
-#modal-btn-back {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	cursor: pointer;
-	height: 40px;
-	width: 40px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.modal-main h1 {
-	font-family: 'Work Sans';
-	font-weight: 400;
-	font-size: 26px;
-	line-height: 30px;
-	color: black;
-	margin-top: 60px;
 }
