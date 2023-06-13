@@ -111,6 +111,9 @@ body {
 	line-height: 1;
 }
 
+#body-login {
+	background-color: #FFFEF8;
+}
 
 
 blockquote,
@@ -137,10 +140,6 @@ body {
 	margin: auto;
 	font-family: 'Work Sans';
 	font-size: 14px;
-}
-
-#body-login {
-	background-color: #FFFEF8;
 }
 
 /* BUTTON */
@@ -267,7 +266,8 @@ nav li {
 
 }
 
-li:hover {
+i:hover,
+li a:hover {
 	color: #B1663C;
 }
 
