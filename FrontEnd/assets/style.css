@@ -193,6 +193,10 @@ body {
 	margin-bottom: 15px;
 }
 
+.icon-button-modifier {
+	display: none;
+}
+
 
 .icon-button {
 	margin-left: 50px;
@@ -369,6 +373,18 @@ a {
 /* MODAL */
 .modifier-modal {
 	margin-bottom: 25px;
+}
+
+.modal {
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	overflow: auto;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.3);
+	display: none;
 }
 
 

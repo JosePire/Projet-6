@@ -3,6 +3,10 @@ const aLogin = document.getElementById('login')
 const divPublish = document.getElementById('publish')
 const header = document.getElementById('header')
 const divFiltres = document.getElementById('filtres')
+const iconButtonsModifier = document.querySelectorAll('.icon-button-modifier')
+const modal = document.getElementById('modal')
+const openModal = document.getElementById('open-modal')
+const modalBtnClose = document.getElementById('modal-btn-close')
 
 const API_URL = 'http://localhost:5678/api'
 
@@ -12,6 +16,9 @@ aLogin.addEventListener('click', () => {
   localStorage.removeItem("token");
 })
 
+openModal.addEventListener('click', () => modal.style.display = 'block')
+modalBtnClose.addEventListener('click', () => modal.style.display = 'none')
+
 const init = async () => {
 
   if (localStorage.token) {
@@ -19,6 +26,7 @@ const init = async () => {
     divPublish.style.display = "block"
     header.style.marginTop = '109px'
     divFiltres.style.display = 'none'
+    iconButtonsModifier.forEach(btn => btn.style.display = 'block')
   }
 
   const projects = await getWorks()
