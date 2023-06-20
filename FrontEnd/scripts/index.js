@@ -7,6 +7,7 @@ const iconButtonsModifier = document.querySelectorAll('.icon-button-modifier')
 const modal = document.getElementById('modal')
 const openModal = document.getElementById('open-modal')
 const modalBtnClose = document.getElementById('modal-btn-close')
+const modalBtnBack = document.getElementById('modal-btn-back')
 
 const API_URL = 'http://localhost:5678/api'
 
@@ -18,7 +19,7 @@ aLogin.addEventListener('click', () => {
 
 openModal.addEventListener('click', () => modal.style.display = 'block')
 modalBtnClose.addEventListener('click', () => modal.style.display = 'none')
-
+modalBtnBack.addEventListener('click', () => modal.style.display = 'none')
 const init = async () => {
 
   if (localStorage.token) {
@@ -100,6 +101,20 @@ const init = async () => {
 
 
 }
+document.addEventListener('click', function (event) {
+  let modal = document.getElementById('modal');
+  let closeButton = document.getElementById('modal-btn-close');
+  let modalMain = document.querySelector('.modal-main');
+
+  // Vérifier si l'élément cliqué se trouve en dehors de la modale
+  if (event.target === modal) {
+    // Fermer la modale
+    modal.style.display = 'none';
+  } else if (event.target === closeButton || event.target === modalMain) {
+    // Éviter la fermeture de la modale si le bouton de fermeture ou la modal-main est cliqué
+    event.stopPropagation();
+  }
+});
 
 
 init()
