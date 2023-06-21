@@ -60,6 +60,11 @@ const createGallery = async () => {
         // et créer l'événement pour supprimer l'image de la gallerie
         const trashContainer = document.createElement('div')
         trashContainer.setAttribute('class', 'trash')
+        const imgTrash = document.createElement('img')
+        imgTrash.src = '../assets/icons/Poubelle.png'
+
+        imgTrash.setAttribute('class', 'trash')
+        trashContainer.appendChild(imgTrash)
         figure.appendChild(trashContainer)
         trashContainer.addEventListener('click', () => {
             deleteWorkById(item.id)
