@@ -84,17 +84,75 @@
 				<btn id="modal-btn-close">X</btn>
 				<btn id="modal-btn-back"><i class="fa-solid fa-arrow-left"></i></btn>
 				<h1>Galerie photo</h1>
-				<div id="edit-gallery" class="edit-gallery">
-					<div class="trash"><img src="./assets/icons/Poubelle.png" alt="Poubelle"></div>
-				</div>
-				<div class="line">
+				<div id="edit-gallery" class="edit-gallery"></div>
 
-				</div>
+				<div class="line"></div>
+
+
+
+				<!--<button type="button" id="btn-ajouter-photo">Ajouter photo</button>
+					<button type="button" id="deleteGallery">Supprimer la galerie</button>
+				</form>
+				<div id="original-gallery" class="gallery-wrapper">
+					<h3 id="title-modal">Ajout photo</h3>
+				</div>!-->
+
 				<form id="ajouter-photo">
-					<button type="button" id="btn-ajouter-photo">Ajouter une photo</button>
+					<a href="#" class="btn-ajouter-photo btn btn-primary" id="open-modal2">Ajouter une photo</a>
 					<button type="button" id="deleteGallery">Supprimer la galerie</button>
 				</form>
 			</div>
+		</div>
+		<div id="myModal2" class="modal">
+			<div class="modal-dialog">
+				<btn id="modal-btn-close">X</btn>
+				<btn id="modal-btn-back"><i class="fa-solid fa-arrow-left"></i></btn>
+
+				<h1 id="title-modal">Ajout photo</h1>
+
+				<div id="addElements">
+					<form id="form">
+						<div id="searchPicture">
+							<div id="inputPhoto" class="flex">
+								<i class="fa-sharp fa-regular fa-5x fa-image"></i>
+								<label for="photo" id="labelPhoto">
+									<p>+ Ajouter photo</p>
+									<input type="file" id="photo" accept="image/jpg, image/png" size="4000000">
+								</label>
+								<p>jpg, png : 4mo max</p>
+							</div>
+
+							<img src="#" alt="" id="photoFile" class="noedit">
+						</div>
+						<label for="title" id="titleLabel">Titre</label>
+						<input type="text" id="title" class="borderInput">
+						<label for="category" id="categoryLab															el">Catégorie</label>
+						<div id="select-container">
+							<select name="category" id="category" class="borderInput">
+								<option value="0"></option>
+								<option value="1">Objets</option>
+								<option value="2">Appartements</option>
+								<option value="3">Hotels &amp; restaurants</option>
+							</select>
+							<img id="dropdown" src="./assets/icons/dropdown.png" alt="">
+						</div>
+
+						<div id="dividerform"></div>
+						<button id="validate">Valider</button>
+					</form>
+				</div>
+
+				<div class="modal-body"></div>
+
+
+
+			</div>
+		</div>
+
+
+
+
+		</div>
 		</div>
 
 		<section id="contact">
