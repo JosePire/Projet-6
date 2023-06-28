@@ -78,3 +78,17 @@ const createGallery = async () => {
     })
 }
 
+// FENETRE AJOUT PHOTO //
+const openModal2 = document.getElementById('open-modal2');
+const modal2 = document.getElementById('myModal2');
+
+openModal2.addEventListener('click', (event) => {
+    event.preventDefault();
+    modal2.style.display = 'block';
+});
+
+modal2.addEventListener('click', (event) => {
+    if (event.target === modal2) {
+        modal2.style.display = 'none';
+    }
+});
