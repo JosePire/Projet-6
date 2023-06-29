@@ -1,8 +1,16 @@
 const modal = document.getElementById('modal')
 const openModal = document.getElementById('open-modal')
-const modalBtnClose = document.getElementById('modal-btn-close')
+const modalBtnClose = document.querySelectorAll('.modal-btn-close')
 const modalBtnBack = document.getElementById('modal-btn-back')
 const modalGallery = document.getElementById('edit-gallery')
+const openModal2 = document.getElementById('open-modal2');
+const modal2 = document.getElementById('myModal2');
+const form = document.getElementById('form')
+const fileUpload = document.getElementById('photo')
+const inputPhotoContainer = document.getElementById('inputPhoto')
+const preview = document.getElementById('preview')
+const inputTitle = document.getElementById('input-title')
+const selectCategory = document.getElementById('category')
 
 const deleteWorkById = async id => fetch(`${API_URL}/works/${id}`,
     {
@@ -32,8 +40,14 @@ openModal.addEventListener('click', () => {
     modal.style.display = 'block'
     createGallery()
 })
-modalBtnClose.addEventListener('click', () => modal.style.display = 'none')
-modalBtnBack.addEventListener('click', () => modal.style.display = 'none')
+modalBtnClose.forEach(item => item.addEventListener('click', () => {
+    modal.style.display = 'none'
+    modal2.style.display = 'none'
+}))
+modalBtnBack.addEventListener('click', () => {
+    modal.style.display = 'block'
+    modal2.style.display = 'none'
+})
 
 const createGallery = async () => {
     // Supprimer tous les éléments enfants de modal gallery
@@ -63,7 +77,7 @@ const createGallery = async () => {
         const imgTrash = document.createElement('img')
         imgTrash.src = '../assets/icons/Poubelle.png'
 
-        imgTrash.setAttribute('class', 'trash')
+        // imgTrash.setAttribute('class', 'trash')
         trashContainer.appendChild(imgTrash)
         figure.appendChild(trashContainer)
         trashContainer.addEventListener('click', () => {
@@ -79,12 +93,14 @@ const createGallery = async () => {
 }
 
 // FENETRE AJOUT PHOTO //
-const openModal2 = document.getElementById('open-modal2');
-const modal2 = document.getElementById('myModal2');
+
 
 openModal2.addEventListener('click', (event) => {
     event.preventDefault();
     modal2.style.display = 'block';
+    modal.style.display = "none";
+    preview.style.display = 'none'
+    inputPhotoContainer.style.display = 'flex'
 });
 
 modal2.addEventListener('click', (event) => {
@@ -93,3 +109,20 @@ modal2.addEventListener('click', (event) => {
     }
 });
 
+// Ajout d'une image
+fileUpload.addEventListener('change', () => {
+    const [file] = fileUpload.files
+    if (file) {
+        preview.src = URL.createObjectURL(file)
+    }
+
+    console.log('ajout image')
+    preview.style.display = 'block'
+    inputPhotoContainer.style.display = 'none'
+})
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    //TODO controler puis envoyer les données à l'api pour créer le projet en bdd
+    console.log(inputTitle.value, selectCategory.value)
+})

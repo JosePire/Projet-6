@@ -81,8 +81,8 @@
 
 		<div id="modal" class="modal">
 			<div class="modal-main">
-				<btn id="modal-btn-close">X</btn>
-				<btn id="modal-btn-back"><i class="fa-solid fa-arrow-left"></i></btn>
+				<btn class="modal-btn-close">X</btn>
+				<!-- <btn id="modal-btn-back"><i class="fa-solid fa-arrow-left"></i></btn> -->
 				<h1>Galerie photo</h1>
 				<div id="edit-gallery" class="edit-gallery"></div>
 
@@ -105,14 +105,13 @@
 		</div>
 		<div id="myModal2" class="modal">
 			<div class="modal-dialog">
-				<btn id="modal-btn-close">X</btn>
+				<btn class="modal-btn-close">X</btn>
 				<btn id="modal-btn-back"><i class="fa-solid fa-arrow-left"></i></btn>
-
 				<h1 id="title-modal">Ajout photo</h1>
-
 				<div id="addElements">
-					<form id="form">
+					<form enctype="multipart/form-data" id="form">
 						<div id="searchPicture">
+							<img id="preview" src="./assets/images/Malt-Juniper-New-York.png" alt="picture">
 							<div id="inputPhoto" class="flex">
 								<i class="fa-sharp fa-regular fa-5x fa-image"></i>
 								<label for="photo" id="labelPhoto">
@@ -121,10 +120,9 @@
 								</label>
 								<p>jpg, png : 4mo max</p>
 							</div>
-
 						</div>
-						<label for="title" id="titleLabel">Titre</label>
-						<input type="text" id="title" class="borderInput">
+						<label for="input-title" id="titleLabel">Titre</label>
+						<input type="text" id="input-title" name="input-title" class="borderInput">
 						<label for="category" id="categoryLabel">Catégorie</label>
 						<div id="select-container">
 							<select name="category" id="category" class="borderInput">
@@ -135,16 +133,11 @@
 							</select>
 							<img id="dropdown" src="./assets/icons/dropdown.png" alt="liste deroulant">
 						</div>
-
 						<div class="line-2"></div>
 						<button id="validate">Valider</button>
 					</form>
 				</div>
-
 				<div class="modal-body"></div>
-
-
-
 			</div>
 		</div>
 

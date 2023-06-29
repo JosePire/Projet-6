@@ -392,10 +392,18 @@ a {
 	position: absolute;
 	top: 5px;
 	right: 5px;
-	height: 10px;
-	width: 10px;
+	height: 17px;
+	width: 17px;
 	background-color: #000000;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.edit-gallery figure .trash img {
+	width: 9px;
+	height: 9px;
 }
 
 .edit-gallery img {
@@ -441,7 +449,7 @@ a {
 	background-color: white;
 }
 
-#modal-btn-close {
+.modal-btn-close {
 	position: absolute;
 	top: 20px;
 	right: 20px;
@@ -577,6 +585,11 @@ a {
 	text-align: center;
 }
 
+#preview {
+	height: 100%;
+	display: none;
+}
+
 #validate {
 	font-family: "Syne";
 	font-size: 14px;
@@ -650,7 +663,7 @@ label {
 	margin: auto;
 }
 
-#title,
+#input-title,
 select {
 	height: 50px;
 	box-shadow: 1px 1px 4px #c5c4c4;
