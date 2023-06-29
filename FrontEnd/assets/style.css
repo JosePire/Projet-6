@@ -505,14 +505,14 @@ a {
 	border: none;
 	background: transparent;
 	font-size: 14px;
-	margin-left: 40px;
+
 }
 
 
 .modal-dialog {
 	margin: 10% auto;
 	width: 630px;
-	height: 670px;
+	height: 720px;
 	position: relative;
 	background-color: #fff;
 	border-radius: 10px;
@@ -527,10 +527,7 @@ a {
 	padding: 20px 0;
 }
 
-.btn-primary {
-	text-align: center;
-	padding-top: 20px;
-}
+
 
 .btn-ajouter-photo {
 	background-color: #1D6154;
@@ -569,7 +566,7 @@ a {
 
 #searchPicture .fa-image {
 	color: #B9C5CC;
-	margin-bottom: 30px;
+	margin-top: 30px;
 	display: flex;
 	justify-content: center;
 }
@@ -591,6 +588,7 @@ a {
 	color: #FFF;
 	background-color: #A7A7A7;
 	margin: auto;
+	cursor: pointer;
 }
 
 #validate:hover {
@@ -616,6 +614,10 @@ a {
 	align-items: center;
 }
 
+.flex {
+	display: flex;
+}
+
 label {
 	font-family: "Work Sans";
 	font-weight: 500;
@@ -627,7 +629,7 @@ label {
 #labelPhoto {
 	background-color: #CBD6DC;
 	border-radius: 50px;
-	width: 90%;
+
 	cursor: pointer;
 }
 
@@ -676,9 +678,16 @@ select {
 	bottom: 20px;
 	width: 1em;
 	right: 30px;
+	color: rgba(108, 108, 108, 1);
 
 }
 
+.line-2 {
+	border: 1px solid rgba(179, 179, 179, 1);
+	background: rgba(179, 179, 179, 1);
+	width: 420px;
+	margin: 40px auto;
+}
 
 /* GALLERY*/
 .gallery {
@@ -716,7 +725,7 @@ select {
 
 }
 
-
+/* CONTACT */
 #contact {
 	width: 50%;
 	margin: auto;

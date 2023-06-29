@@ -92,3 +92,4 @@ modal2.addEventListener('click', (event) => {
         modal2.style.display = 'none';
     }
 });
+
