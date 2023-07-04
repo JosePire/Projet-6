@@ -88,15 +88,6 @@
 
 				<div class="line"></div>
 
-
-
-				<!--<button type="button" id="btn-ajouter-photo">Ajouter photo</button>
-					<button type="button" id="deleteGallery">Supprimer la galerie</button>
-				</form>
-				<div id="original-gallery" class="gallery-wrapper">
-					<h3 id="title-modal">Ajout photo</h3>
-				</div>!-->
-
 				<form id="ajouter-photo">
 					<button class="btn-ajouter-photo btn btn-primary" id="open-modal2">Ajouter une photo</button>
 					<button type="button" id="deleteGallery">Supprimer la galerie</button>
@@ -120,9 +111,14 @@
 								</label>
 								<p>jpg, png : 4mo max</p>
 							</div>
+							<div id="file-error" class="input-error">Veuillez charger une image au format jpg, jpeg ou
+								png
+								inférieure à 4 Mo</div>
 						</div>
 						<label for="input-title" id="titleLabel">Titre</label>
 						<input type="text" id="input-title" name="input-title" class="borderInput">
+						<div id="title-error" class="input-error">Veuillez renseigner un titre valide avec au moins 2
+							caractères</div>
 						<label for="category" id="categoryLabel">Catégorie</label>
 						<div id="select-container">
 							<select name="category" id="category" class="borderInput">
@@ -133,6 +129,7 @@
 							</select>
 							<img id="dropdown" src="./assets/icons/dropdown.png" alt="liste deroulant">
 						</div>
+						<div id="select-error" class="input-error">Veuillez sélectionner une catégorie valide</div>
 						<div class="line-2"></div>
 						<button id="validate">Valider</button>
 					</form>

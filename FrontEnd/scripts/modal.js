@@ -11,6 +11,9 @@ const inputPhotoContainer = document.getElementById('inputPhoto')
 const preview = document.getElementById('preview')
 const inputTitle = document.getElementById('input-title')
 const selectCategory = document.getElementById('category')
+const fileError = document.getElementById('file-error')
+const titleError = document.getElementById('title-error')
+const selectError = document.getElementById('select-error')
 
 const deleteWorkById = async id => fetch(`${API_URL}/works/${id}`,
     {
@@ -21,6 +24,24 @@ const deleteWorkById = async id => fetch(`${API_URL}/works/${id}`,
     }
 ).then(res => res)
 
+const postWork = async data => fetch(`${API_URL}/works/`,
+    {
+        method: 'post',
+        headers: {
+            'Authorization': `Bearer ${localStorage.token}`,
+        },
+        body: data
+    }
+).then(res => res.json())
+
+const closeModal = () => {
+    createGalleryHome()
+    modal.style.display = 'none'
+    modal2.style.display = 'none'
+}
+
+const hasValidExtension = (extension, validExtensions = ['jpg', 'jpeg', 'png']) => validExtensions.includes(extension.toLowerCase())
+
 document.addEventListener('click', function (event) {
     let modal = document.getElementById('modal');
     let closeButton = document.getElementById('modal-btn-close');
@@ -29,7 +50,7 @@ document.addEventListener('click', function (event) {
     // Vérifier si l'élément cliqué se trouve en dehors de la modale
     if (event.target === modal) {
         // Fermer la modale
-        modal.style.display = 'none';
+        closeModal()
     } else if (event.target === closeButton || event.target === modalMain) {
         // Éviter la fermeture de la modale si le bouton de fermeture ou la modal-main est cliqué
         event.stopPropagation();
@@ -37,17 +58,14 @@ document.addEventListener('click', function (event) {
 });
 
 openModal.addEventListener('click', () => {
+    fileError.style.display = 'none'
+    titleError.style.display = 'none'
+    selectError.style.display = 'none'
     modal.style.display = 'block'
     createGallery()
 })
-modalBtnClose.forEach(item => item.addEventListener('click', () => {
-    modal.style.display = 'none'
-    modal2.style.display = 'none'
-}))
-modalBtnBack.addEventListener('click', () => {
-    modal.style.display = 'block'
-    modal2.style.display = 'none'
-})
+modalBtnClose.forEach(item => item.addEventListener('click', () => closeModal()))
+modalBtnBack.addEventListener('click', () => closeModal())
 
 const createGallery = async () => {
     // Supprimer tous les éléments enfants de modal gallery
@@ -125,4 +143,27 @@ form.addEventListener('submit', e => {
     e.preventDefault()
     //TODO controler puis envoyer les données à l'api pour créer le projet en bdd
     console.log(inputTitle.value, selectCategory.value)
+
+
+
+    const formData = new FormData()
+    const [file] = fileUpload.files
+
+    if (file) {
+        const fileNameSplitted = file.name.split('.')
+        const extension = fileNameSplitted[fileNameSplitted.length - 1].toLowerCase()
+        const isValidExtension = file.size <= 4000000 && hasValidExtension(extension)
+        if (!isValidExtension) {
+            fileError.style.display = 'block'
+            return
+        } else {
+            file.style.display = 'none'
+        }
+    }
+
+
+    formData.append('image', file)
+    formData.append('title', inputTitle.value)
+    formData.append('category', parseInt(selectCategory.value))
+    postWork(formData).then(() => closeModal())
 })
