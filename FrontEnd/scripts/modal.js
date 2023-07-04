@@ -35,7 +35,7 @@ const postWork = async data => fetch(`${API_URL}/works/`,
 ).then(res => res.json())
 
 const closeModal = () => {
-    createGalleryHome()
+    createGallery()
     modal.style.display = 'none'
     modal2.style.display = 'none'
 }

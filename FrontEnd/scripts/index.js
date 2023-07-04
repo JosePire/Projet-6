@@ -13,14 +13,10 @@ aLogin.addEventListener('click', () => {
   localStorage.removeItem("token");
 })
 
-const init = async () => {
-
-  if (localStorage.token) {
-    aLogin.innerHTML = 'logout'
-    divPublish.style.display = "block"
-    header.style.marginTop = '109px'
-    divFiltres.style.display = 'none'
-    iconButtonsModifier.forEach(btn => btn.style.display = 'block')
+const createGalleryHome = async () => {
+  // Supprimer tous les éléments enfants de gallery
+  while (divGallery.firstChild) {
+    divGallery.removeChild(divGallery.firstChild)
   }
 
   const projects = await getWorks()
@@ -88,7 +84,19 @@ const init = async () => {
       });
     });
   });
+}
 
+const init = async () => {
+
+  if (localStorage.token) {
+    aLogin.innerHTML = 'logout'
+    divPublish.style.display = "block"
+    header.style.marginTop = '109px'
+    divFiltres.style.display = 'none'
+    iconButtonsModifier.forEach(btn => btn.style.display = 'block')
+  }
+
+  await createGalleryHome()
 
 }
 
