@@ -157,7 +157,7 @@ form.addEventListener('submit', e => {
             fileError.style.display = 'block'
             return
         } else {
-            file.style.display = 'none'
+            fileError.style.display = 'none'
         }
     }
 
@@ -167,3 +167,4 @@ form.addEventListener('submit', e => {
     formData.append('category', parseInt(selectCategory.value))
     postWork(formData).then(() => closeModal())
 })
+
