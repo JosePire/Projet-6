@@ -132,6 +132,15 @@ fileUpload.addEventListener('change', () => {
     const [file] = fileUpload.files
     if (file) {
         preview.src = URL.createObjectURL(file)
+        const fileNameSplitted = file.name.split('.')
+        const extension = fileNameSplitted[fileNameSplitted.length - 1].toLowerCase()
+        const isValidExtension = file.size <= 4000000 && hasValidExtension(extension)
+        if (!isValidExtension) {
+            fileError.style.display = 'block'
+            return
+        } else {
+            fileError.style.display = 'none'
+        }
     }
 
     console.log('ajout image')
@@ -149,6 +158,7 @@ form.addEventListener('submit', e => {
     const formData = new FormData()
     const [file] = fileUpload.files
 
+    console.log('file:', file)
     if (file) {
         const fileNameSplitted = file.name.split('.')
         const extension = fileNameSplitted[fileNameSplitted.length - 1].toLowerCase()
@@ -159,6 +169,22 @@ form.addEventListener('submit', e => {
         } else {
             fileError.style.display = 'none'
         }
+    }
+
+    if (inputTitle.value.trim().length >= 2) {
+        titleError.style.display = 'none'
+    } else {
+        titleError.style.display = 'block'
+        return
+    }
+
+    const selectValue = parseInt(selectCategory.value)
+    console.log("selectValue:", selectValue, selectValue >= 1 && selectValue <= 3)
+    if (selectValue >= 1 && selectValue <= 3) {
+        selectError.style.display = 'none'
+    } else {
+        selectError.style.display = 'block'
+        return
     }
 
 
